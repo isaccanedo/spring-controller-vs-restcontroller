@@ -37,3 +37,26 @@ Anotamos o método de tratamento da solicitação com @ResponseBody. Essa anota�
 
 # 3. Spring MVC @RestController
 @RestController é uma versão especializada do controlador. Inclui as anotações @Controller e @ResponseBody e, como resultado, simplifica a implementação do controlador:
+
+```
+@RestController
+@RequestMapping("books-rest")
+public class SimpleBookRestController {
+    
+    @GetMapping("/{id}", produces = "application/json")
+    public Book getBook(@PathVariable int id) {
+        return findBookById(id);
+    }
+
+    private Book findBookById(int id) {
+        // ...
+    }
+}
+```
+
+O controlador é anotado com a anotação @RestController; portanto, o @ResponseBody não é necessário.
+
+Cada método de tratamento de solicitação da classe do controlador serializa automaticamente os objetos de retorno em HttpResponse.
+
+# 4. Conclusão
+Neste artigo, examinamos os controladores REST clássicos e especializados disponíveis no Spring Framework.
