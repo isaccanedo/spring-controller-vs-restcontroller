@@ -1,4 +1,4 @@
-# spring-controller-vs-restcontroller
+## spring-controller-vs-restcontroller
 :herb: Neste breve tutorial, discutiremos a diferença entre as anotações @Controller e @RestController no Spring MVC
 
 # 1. Visão Geral
